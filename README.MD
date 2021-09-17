@@ -3,7 +3,7 @@
 
 ## Install
 ```bash
-pip install -r time_splitter
+pip install git+https://github.com/mistergates/time_splitter.git
 ```
 
 ## Run
