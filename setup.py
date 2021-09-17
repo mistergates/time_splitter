@@ -22,7 +22,7 @@ setup(
     description="Time Splitter GUI",
     author="Mitch Gates",
     author_email="mitchgates@outlook.com",
-    url="",
+    url="https://github.com/mistergates/time_splitter",
     license=license,
     packages=["time_splitter", "time_splitter.bin"],
     install_requires=requirements,

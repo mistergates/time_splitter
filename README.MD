@@ -10,3 +10,8 @@ pip install git+https://github.com/mistergates/time_splitter.git
 ```bash
 timesplitter
 ```
+
+## TODO
+- [ ] Hotkeys
+- [ ] Export results
+- [ ] Better handling of split rows
