@@ -48,15 +48,18 @@ class TimerGUI(Timer):
             event, values = self.window.read()
             if event == "Exit" or event == sg.WIN_CLOSED:
                 break
-            if event == 'Start':
-                self._reset_splits()
-                self.start()
-                self._start_gui_threads()
-            if event == 'Split':
+            if event == '_STARTSTOP_':
+                if not self._running:
+                    self._reset_splits()
+                    self.start()
+                    self._start_gui_threads()
+                    self.window.Element('_STARTSTOP_').Update(('Stop'))
+                else:
+                    self._add_split_to_gui('Stopped')
+                    self.stop()
+                    self.window.Element('_STARTSTOP_').Update(('Restart'))
+            if event == '_SPLIT_':
                 self._add_split_to_gui('Split')
-            if event == 'Stop':
-                self._add_split_to_gui('Stopped')
-                self.stop()
 
     def _get_layout(self):
         self.timer_column = [
@@ -66,11 +69,9 @@ class TimerGUI(Timer):
 
         self.button_column = [
             [
-                sg.Button("Start"),
-                sg.Button("Split"),
-                sg.Button("Stop"),
-                sg.VerticalSeparator(),
-                sg.Button("Save")
+                sg.Button("Start", key='_STARTSTOP_', size=8),
+                sg.Button("Split", key='_SPLIT_', size=8),
+                sg.Button("Export", key='_EXPORT_', size=8)
             ]
         ]
         

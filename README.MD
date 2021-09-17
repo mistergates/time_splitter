@@ -1,4 +1,5 @@
 # Time Splitter
+![Time Splitter](./time_splitter.png?raw=true "Time Splitter")
 
 ## Install
 ```bash
