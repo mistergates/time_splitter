@@ -7,5 +7,5 @@ pip install -r time_splitter
 
 ## Run
 ```bash
-time_splitter
+timesplitter
 ```
